@@ -1,4 +1,4 @@
-package com.nationdev.shopapp
+package com.nationdev.shopapp.ui.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
