@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import com.nationdev.shopapp.sampledata.sampleSections
 import com.nationdev.shopapp.ui.screens.HomeScreen
 import com.nationdev.shopapp.ui.theme.ShopAppTheme
 
@@ -21,7 +22,9 @@ class MainActivity : ComponentActivity() {
 fun App() {
     ShopAppTheme {
         Surface {
-            HomeScreen()
+            HomeScreen(
+                sampleSections
+            )
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.nationdev.shopapp.ui.activities
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
@@ -22,7 +23,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.nationdev.shopapp.model.Product
 import com.nationdev.shopapp.ui.theme.ShopAppTheme
+import java.math.BigDecimal
 
 class ProductFormActivity : ComponentActivity() {
 
@@ -97,7 +100,20 @@ fun ProductFormScreem() {
             })
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = {
+                val convertedPrice = try {
+                    BigDecimal(price)
+                }catch (e: NumberFormatException){
+                    BigDecimal.ZERO
+                }
+                val product = Product(
+                    name = name,
+                    image = url,
+                    price = convertedPrice,
+                    description = description
+                )
+                Log.i("ProductFormActivity", "ProductFormScreem: $product")
+            },
             Modifier.fillMaxWidth(),
         ) {
             Text(text = "Salvar")
