@@ -1,6 +1,5 @@
 package com.nationdev.shopapp.ui.screens
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -8,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -25,7 +25,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.nationdev.shopapp.model.Product
 import com.nationdev.shopapp.sampledata.sampleSections
+import com.nationdev.shopapp.ui.components.CardProductItem
 import com.nationdev.shopapp.ui.components.ProductsSection
+import com.nationdev.shopapp.ui.components.sampleProducts
 import com.nationdev.shopapp.ui.theme.ShopAppTheme
 
 @Composable
@@ -39,11 +41,7 @@ fun HomeScreen(
             onValueChange = { newValue ->
                 text = newValue
             }, Modifier
-                .padding(
-                    start = 16.dp,
-                    top = 16.dp,
-                    end = 16.dp
-                )
+                .padding(16.dp)
                 .fillMaxWidth(),
             shape = RoundedCornerShape(35),
             leadingIcon = {
@@ -61,18 +59,24 @@ fun HomeScreen(
             Modifier
                 .fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(16.dp),
-            contentPadding = PaddingValues(vertical = 16.dp)
+            contentPadding = PaddingValues(bottom = 16.dp)
         ) {
-            for (section in sections) {
-                val title = section.key
-                val products = section.value
-                item {
-                    ProductsSection(
-                        title = title,
-                        products = products
-                    )
-                }
+            items(sampleProducts) { p ->
+                CardProductItem(
+                    product = p,
+                    Modifier.padding(horizontal = 16.dp),
+                )
             }
+//            for (section in sections) {
+//                val title = section.key
+//                val products = section.value
+//                item {
+//                    ProductsSection(
+//                        title = title,
+//                        products = products
+//                    )
+//                }
+//            }
         }
     }
 }
