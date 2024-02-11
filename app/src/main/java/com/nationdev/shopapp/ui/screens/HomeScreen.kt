@@ -24,11 +24,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.nationdev.shopapp.model.Product
+import com.nationdev.shopapp.sampledata.sampleProducts
 import com.nationdev.shopapp.sampledata.sampleSections
 import com.nationdev.shopapp.ui.components.CardProductItem
 import com.nationdev.shopapp.ui.components.ProductsSection
 import com.nationdev.shopapp.ui.components.SearchTextField
-import com.nationdev.shopapp.ui.components.sampleProducts
 import com.nationdev.shopapp.ui.theme.ShopAppTheme
 
 @Composable
