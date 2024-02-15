@@ -51,7 +51,7 @@ fun CardProductItem(
                 contentDescription = null,
                 Modifier
                     .fillMaxWidth()
-                    .height(100.dp),
+                    .height(350.dp),
                 placeholder = painterResource(id = R.drawable.noimage),
                 contentScale = ContentScale.Crop
             )
