@@ -16,9 +16,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nationdev.shopapp.model.Product
-import com.nationdev.shopapp.sampledata.sampleProducts
+import com.nationdev.shopapp.sampledata.sampleNewProducts
 import com.nationdev.shopapp.ui.theme.ShopAppTheme
-import java.math.BigDecimal
 
 @Composable
 fun ProductsSection(
@@ -54,7 +53,7 @@ fun ProductsSection(
 fun ProductsSectionPreview() {
     ShopAppTheme {
         Surface {
-            ProductsSection("Promoções", products = sampleProducts)
+            ProductsSection("Promoções", products = sampleNewProducts)
         }
     }
 }
